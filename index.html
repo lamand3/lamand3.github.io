@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+<main class="layout">
+    <section class="left">
+        <h2>The Rise of the Internet</h2>
+        <p>
+            Over the past few decades, the number of people with access to the internet has increased dramatically.
+            Once a rare luxury limited to a small fraction of the population, internet access has become an essential
+            part of everyday life -- connecting people across continents, transforming economies, and reshaping how
+            information flows globally. Want to know more? Click
+            <button id="clickText" class="hot" aria-controls="graphPane" aria-expanded="false">HERE</button>.
+        </p>
+    </section>
+
+    <section id="graphPane" class="right" hidden>
+        <svg id="chart1" class="chart-svg" viewBox="0 0 1100 550"
+             role="img" aria-label="Percent Internet Usage Over Time"></svg>
+    </section>
+</main>
+
+<section class="vis-section">
+    <h2>Top 10 Countries by Internet Use (<span id="bar-year-label"></span>)</h2>
+    <p class="chart-description">
+        Among these countries, can you guess what they have in common that makes their internet use so high?
+    </p>
+    <div id="bar-chart" class="card"></div>
+</section>
+
+<section class="vis-section" id="scatter-section" aria-labelledby="scatter-title">
+    <h2 id="scatter-title">
+        Urbanization Rate vs. Internet Use
+        <small class="muted">— brush to select countries</small>
+    </h2>
+
+    <div class="card">
+        <div class="control-row">
+            <label for="scatter-cap">Max points:</label>
+            <input id="scatter-cap" type="number" min="20" max="500" step="10" value="150" style="width:90px" />
+            <span class="muted" id="scatter-count"></span>
+        </div>
+
+        <section class="vis-section">
+            <p class="chart-description">
+                As countries become more urbanized, access to infrastructure such as electricity, broadband, and mobile
+                networks typically expands. This relationship often leads to higher internet adoption rates in areas with greater
+                urban populations. The scatter plot below illustrates this connection, showing how nations with higher
+                urbanization rates tend to have a larger share of their populations using the internet.
+            </p>
+
+            <svg id="scatterVis" class="chart-svg" viewBox="0 0 1100 520"
+                 aria-label="Urbanization vs Internet Usage"></svg>
+        </section>
+
+    </div>
+</section>
+
+
+<section id="facts-to-chart" class="ff-wrap">
+    <div class="ff-left">
+        <h2 class="ff-title">Click a percentage to see its country</h2>
+        <div id="ff-list" class="ff-list"></div>
+    </div>
+
+    <div class="ff-right">
+        <h2 class="ff-title">GDP vs Internet Usage</h2>
+        <svg id="gdpNetChart" class="ff-chart" viewBox="0 0 1100 520"
+             aria-label="GDP vs Internet Usage"></svg>
+    </div>
+</section>
+
+
+
+
+<section class="vis-section final-summary">
+    <p class="chart-description">
+        Taken together, these visualizations highlight how internet access has grown from a rare luxury into a global
+        necessity, but also how uneven that growth remains. Highly urbanized and economically developed nations tend to
+        enjoy widespread connectivity, while countries with lower GDP or less urban infrastructure often lag behind.
+        Understanding these patterns helps reveal not only where progress has been made, but also where investments in
+        technology, education, and infrastructure can make the most meaningful impact. As the world becomes
+        increasingly digital, closing these gaps will be essential to ensuring that all communities can participate
+        fully in the global information economy.
+    </p>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="./js/scatterView.js" defer></script>
+<script src="./js/barChart.js" defer></script>
+<script src="./js/main.js" defer></script>
+
+</body>
+</html>
